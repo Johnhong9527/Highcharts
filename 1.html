@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--<script src="https://code.highcharts.com/highcharts.src.js"></script>-->
+  <script src="./js/highcharts.js"></script>
+  <title>Document</title>
+</head>
+<body>
+<!--创建图表-->
+<div id="container" style="width: 600px;height:400px;margin: 0 auto;"></div>
+<script>
+  // 图标配置
+  var options = {
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: '我的第一个图表'
+    },
+    subtitle: {
+      text: '我是副标题'
+    },
+    xAxis: {
+      categories: ['苹果', '香蕉', '橙子'],
+      title:{
+        test:'x轴标题'
+      }
+    },
+    yAxis: {
+      title: {
+        text: '吃水果个数'
+      }
+    },
+    series: [{
+      name: '小明',
+      data: [1, 0, 4]
+    }, {
+      name: '小洪',
+      data: [5, 7, 3]
+    }, {
+      name: '小白',
+      data: [5, 4, 3]
+    }]
+  };
+  var chart = Highcharts.chart('container', options);
+</script>
+
+</body>
+</html>
