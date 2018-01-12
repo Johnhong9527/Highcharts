@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!--<script src="https://code.highcharts.com/highcharts.src.js"></script>-->
   <script src="./js/highcharts.js"></script>
+  <script src="./js/highcharts-more.js"></script>
   <title>Document</title>
 </head>
 <body>
@@ -16,40 +17,25 @@
   // 图标配置
   var options = {
     chart: {
-      type: 'bar'
-    },
-    title: {
-      text: '我的第一个图表'
-    },
-    subtitle: {
-      text: '我是副标题'
+      polar: true,
+      type: 'area'
     },
     xAxis: {
-      categories: ['苹果', '香蕉', '橙子'],
-      title: {
-        test: 'x轴标题'
-      }
+      categories: ['生命值', '战力', '输出']
     },
-    yAxis: {
-      title: {
-        text: '吃水果个数'
-      }
+    tooltip: {
+      shared: true,
+      useHTML: true,
+      headerFormat: '<small>{point.key}</small><table>',
+      pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+      '<td style="text-align: right"><b>{point.y}</b></td></tr>',
+      footerFormat: '</table>',
+      valueDecimals: 2,
+      borderColor:'red'
     },
     series: [{
-      name: '小明',
-      data: [1, 0, 4]
-    }, {
-      name: '小洪',
-      data: [5, 7, 3]
-    }, {
-      name: '小白',
-      data: [5, 4, 3],
-    labels:{
-      formatter: function () {
-        console.log(this)
-        return this.value;
-      }
-    }
+      name: '数据',
+      data: [29.9, 71.5, 106.4]
     }]
   };
   var chart = Highcharts.chart('container', options);
